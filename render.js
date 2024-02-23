@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
+const linkGoBack = document.getElementById('view')
 
 window.addEventListener('DOMContentLoaded', () => {
     const matriz = JSON.parse(localStorage.getItem('matriz'))
@@ -15,4 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 100)
         }
     }
+
+    setTimeout(()=> {
+        linkGoBack.style.display = 'block'
+    }, 1000)
 })

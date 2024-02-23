@@ -147,3 +147,7 @@ footer::after {
 #view-matriz {
     display: none;
 }
+
+#view {
+    display: none;
+}
