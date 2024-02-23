@@ -67,6 +67,7 @@ buttonGenerate.onclick = () => {
     localStorage.setItem('matriz', JSON.stringify(matriz))
     linkViewImage.style.display = 'block'
     linkViewMatriz.style.display = 'block'
+    buttonGenerate.style.display = 'none'
 }
 
 
