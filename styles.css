@@ -57,6 +57,19 @@ main {
     animation: up 0.4s 0.2s backwards;
 }
 
+ul {
+    width: 100%;
+    border-inline: 5px solid var(--orange);
+    padding: 1rem;
+    overflow-x: scroll;
+    list-style: none;
+}
+
+li {
+    font-weight: bold;
+    color: var(--green);
+}
+
 button, a {
     text-decoration: none;
     text-align: center;
@@ -74,6 +87,23 @@ button, a {
 
 a {
     margin-top: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+span {
+    font-size: 1.5rem;
+    color: var(--orange);
+}
+
+span + span {
+    margin-left: 1rem;
+}
+
+span > strong {
+    color: var(--white);
 }
 
 canvas {
@@ -104,5 +134,9 @@ footer::after {
 }
 
 #view-image {
+    display: none;
+}
+
+#view-matriz {
     display: none;
 }

@@ -4,6 +4,7 @@ const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 const buttonGenerate = document.getElementById('generate')
 const linkViewImage = document.getElementById('view-image')
+const linkViewMatriz = document.getElementById('view-matriz')
 
 const matriz = []
 let image;
@@ -12,16 +13,16 @@ buttonSelect.onclick = () => {
     upload.click()
 }
 
-function imageFactor(width) {
+function imageFactor(length) {
     let factor = 1;
 
-    if(width > 400) {
-        width = width / 2
+    if(length > 400) {
+        length = length / 2
         factor = factor * 2
     }
 
-    if(width > 400) {
-        factor = factor * imageFactor(width)
+    if(length > 400) {
+        factor = factor * imageFactor(length)
     }
 
     return factor
@@ -30,7 +31,7 @@ function imageFactor(width) {
 function loadImage() {
     const {width, height} = image
 
-    const factor = imageFactor(width)
+    const factor = width > height ? imageFactor(width) : imageFactor(height)
 
     canvas.width = width / factor
     canvas.height = height / factor
@@ -64,6 +65,7 @@ buttonGenerate.onclick = () => {
 
     localStorage.setItem('matriz', JSON.stringify(matriz))
     linkViewImage.style.display = 'block'
+    linkViewMatriz.style.display = 'block'
 }
 
 
