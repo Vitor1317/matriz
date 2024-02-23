@@ -32,6 +32,7 @@ function loadImage() {
     const {width, height} = image
 
     const factor = width > height ? imageFactor(width) : imageFactor(height)
+    localStorage.setItem('factor', factor.toString())
 
     canvas.width = width / factor
     canvas.height = height / factor
