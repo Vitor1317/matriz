@@ -148,6 +148,10 @@ footer::after {
     display: none;
 }
 
+#view-color {
+    display: none;
+}
+
 #view {
     display: none;
 }
