@@ -5,7 +5,6 @@ const ctx = canvas.getContext('2d')
 const buttonGenerate = document.getElementById('generate')
 const linkViewImage = document.getElementById('view-image')
 const linkViewMatriz = document.getElementById('view-matriz')
-const linkViewColor = document.getElementById('view-color')
 
 const matriz = []
 let image;
@@ -51,6 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
         reader.onload = (event) => {
             image = new Image()
             image.src = event.target.result
+            localStorage.setItem('image', image.src)
             image.onload = loadImage
         }
     })    
@@ -68,7 +68,6 @@ buttonGenerate.onclick = () => {
     localStorage.setItem('matriz', JSON.stringify(matriz))
     linkViewImage.style.display = 'block'
     linkViewMatriz.style.display = 'block'
-    linkViewColor.style.display = 'block'
     buttonGenerate.style.display = 'none'
 }
 

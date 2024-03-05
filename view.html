@@ -11,8 +11,30 @@
         <h1>Gerador de Matriz</h1>
         <p>com HTML5 Canvas e JS</p>
     </header>
+
+    <div id="span-container"></div>
+
     <main>  
         <canvas id="canvas"></canvas>
+        <button id="choose-color">Escolha a cor</button>
+        <h2 class="title">Cor trocada</h2>
+        <div id="container-inputs">
+            <div class="input-box">
+                <label for="red">R</label>
+                <input disabled min="0" max="255"  type="number" name="" id="red">
+            </div>
+            <div class="input-box">
+                <label for="green">G</label>
+                <input disabled min="0" max="255" type="number" name="" id="green">
+            </div>
+            <div class="input-box">
+                <label for="blue">B</label>
+                <input disabled min="0" max="255" type="number" name="" id="blue">
+            </div>
+            <div id="preview-color"></div>
+        </div>
+        <h2 class="title block">Escolha a cor</h2>
+        <input type="color" name="" id="input-color">
         <a href="./index.html" id="view">Voltar</a>
     </main>
 

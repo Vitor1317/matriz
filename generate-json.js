@@ -19,7 +19,7 @@ matrizInfo.appendChild(span3)
 for(let y = 0; y < linhas; y++) {
     let li = document.createElement('li')
     for(let x = 0; x < colunas; x++) {
-        const content = document.createTextNode(matriz[y][x] + "|__|")
+        const content = document.createTextNode(matriz[y][x] + ",")
         li.appendChild(content)
         matrizContent.appendChild(li)
     }
