@@ -1,4 +1,4 @@
-import { hexToRgb } from "./utils/conversion.js"
+import { hexToRgb, hexToRgba } from "./utils/conversion.js"
 
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
@@ -35,11 +35,11 @@ function reDraw(color, swap) {
     function isIntervalColor(colorChoose, colorMatriz) {
         colorMatriz = Number(colorMatriz)
 
-        if(colorChoose <= colorMatriz && (colorChoose + 10) >= colorMatriz) {
+        if(colorChoose <= colorMatriz && (colorChoose + 35) >= colorMatriz) {
             return true
         }
 
-        if(colorChoose >= colorMatriz && (colorChoose - 10) <= colorMatriz) {
+        if(colorChoose >= colorMatriz && (colorChoose - 35) <= colorMatriz) {
             return true
         }
 
@@ -54,7 +54,7 @@ function reDraw(color, swap) {
                 console.log(matriz[y][x])
                 counter++
                 console.log(counter)
-                ctx.fillStyle = hexToRgb(swap)
+                ctx.fillStyle = hexToRgba(swap)
                 ctx.fillRect(x, y, 1, 1)
             }
         }

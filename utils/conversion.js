@@ -24,3 +24,13 @@ export function hexToRgb(hex) {
 
     return [red, green, blue]
 }
+
+export function hexToRgba(hex) {
+    hex = hex.replace(/^#/, '')
+
+    let red = parseInt(hex.substring(0, 2), 16)
+    let green = parseInt(hex.substring(2, 4), 16)
+    let blue = parseInt(hex.substring(4, 6), 16)
+
+    return `rgba(${red},${green},${blue},1)` 
+}
