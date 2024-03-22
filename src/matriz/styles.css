@@ -1,0 +1,36 @@
+section {
+    margin-bottom: 2rem;
+}
+
+ul {
+    width: 100%;
+    border-inline: 5px solid var(--orange);
+    padding: 1rem;
+    overflow-x: scroll;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+li {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--green);
+}
+
+span {
+    font-size: 1.5rem;
+    color: var(--orange);
+}
+
+@media(max-width: 500px) {
+    span {
+        font-size: 0.8rem;
+    }
+}
+span + span {
+    margin-left: 1rem;
+}
+
+span > strong {
+    color: var(--white);
+}
