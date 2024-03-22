@@ -1,4 +1,4 @@
-import { hexToRgb, hexToRgba } from "./utils/conversion.js"
+import { hexToRgb, hexToRgba } from "../utils/conversion.js"
 
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
@@ -50,10 +50,9 @@ function reDraw(color, swap) {
         for(let x = 0; x < width; x++) {
             const [red, green, blue] = color
             const [mRed, mGreen, mBlue] = getRGBA(matriz[y][x])
+            if(matriz[y][x] === 'rgba(0,0,0,0)') continue
             if(isIntervalColor(red, mRed) && isIntervalColor(green, mGreen) && isIntervalColor(blue, mBlue)) {
-                console.log(matriz[y][x])
                 counter++
-                console.log(counter)
                 ctx.fillStyle = hexToRgba(swap)
                 ctx.fillRect(x, y, 1, 1)
             }

@@ -32,5 +32,5 @@ export function hexToRgba(hex) {
     let green = parseInt(hex.substring(2, 4), 16)
     let blue = parseInt(hex.substring(4, 6), 16)
 
-    return `rgba(${red},${green},${blue},1)` 
+    return `rgba(${red},${green},${blue},255)` 
 }
