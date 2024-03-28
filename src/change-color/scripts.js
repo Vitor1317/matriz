@@ -2,7 +2,7 @@ import { hexToRgb, hexToRgba } from '../../utils/conversion.js';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const linkGoBack = document.getElementById('view');
+const linkGoBack = document.getElementById('go-back');
 const buttonChooseColor = document.getElementById('choose-color');
 const input_red = document.getElementById('red');
 const input_green = document.getElementById('green');
@@ -38,11 +38,11 @@ function reDraw(color, swap) {
   function isIntervalColor(colorChoose, colorMatriz) {
     colorMatriz = Number(colorMatriz);
 
-    if (colorChoose <= colorMatriz && colorChoose + 35 >= colorMatriz) {
+    if (colorChoose <= colorMatriz && colorChoose + 50 >= colorMatriz) {
       return true;
     }
 
-    if (colorChoose >= colorMatriz && colorChoose - 35 <= colorMatriz) {
+    if (colorChoose >= colorMatriz && colorChoose - 50 <= colorMatriz) {
       return true;
     }
 
@@ -108,8 +108,6 @@ function draw() {
 window.addEventListener('DOMContentLoaded', () => {
   draw(width, height);
 
-  setTimeout(() => {
-    linkGoBack.style.display = 'block';
-    buttonChooseColor.style.display = 'block';
-  }, 1000);
+  linkGoBack.style.display = 'block';
+  buttonChooseColor.style.display = 'block';
 });
