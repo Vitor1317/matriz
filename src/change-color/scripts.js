@@ -51,17 +51,19 @@ function reDraw(color, swap) {
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
+      if (matriz[y][x] === 'rgba(0,0,0,0)') continue;
       const [red, green, blue] = color;
       const [mRed, mGreen, mBlue] = getRGBA(matriz[y][x]);
-      if (matriz[y][x] === 'rgba(0,0,0,0)') continue;
       if (
         isIntervalColor(red, mRed) &&
         isIntervalColor(green, mGreen) &&
         isIntervalColor(blue, mBlue)
       ) {
         counter++;
-        ctx.fillStyle = hexToRgba(swap);
+        const color = hexToRgba(swap);
+        ctx.fillStyle = color;
         ctx.fillRect(x, y, 1, 1);
+        matriz[y][x] = color;
       }
     }
   }
@@ -106,7 +108,7 @@ function draw() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  draw(width, height);
+  draw();
 
   linkGoBack.style.display = 'block';
   buttonChooseColor.style.display = 'block';
