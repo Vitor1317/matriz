@@ -83,12 +83,14 @@ button, a {
 img {
     width: 100%;
     margin-bottom: 2rem;
+    border-radius: 8px;
 }
 
 canvas {
     width: 100%;
     height: auto;
     margin-block: 1rem;
+    border-radius: 8px;
 }
 
 footer {
@@ -149,6 +151,10 @@ footer::after {
 }
 
 #view-signal-change {
+    display: none;
+}
+
+#view-signal-periodic {
     display: none;
 }
 

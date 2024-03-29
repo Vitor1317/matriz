@@ -5,6 +5,10 @@
     gap: 1rem;
 }
 
+.link {
+    margin-top: 3rem;
+}
+
 @media (max-width: 768px) {
     .inputs-container {
         flex-direction: column;

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="./styles.css">
-    <title>Escalation</title>
+    <title>signalPeriodic</title>
 </head>
-
 <body>
     <header>
         <h1>Gerador de Matriz</h1>
@@ -16,28 +14,23 @@
     </header>
 
     <main>
-        <img id="scale-image" alt="">
+       <img id="image" alt="">
 
-        <div class="inputs-container">
+        <div class="input-container">
             <div class="input-box">
-                <label for="scaleX">X</label>
-                <input id="scaleX" type="range">
+                <input type="number" id="speed" value="5" min="5" max="50" step="5">
+                <label for="speed">px</label>
             </div>
             <div class="input-box">
-                <label for="scaleY">Y</label>
-                <input id="scaleY" type="range">
-            </div>
-            <div class="input-box">
-                <label for="scaleP">P</label>
-                <input id="scaleP" type="range">
+                <input type="number" id="time" value="100" min="0" max="2000" step="100">
+                <label for="time">ms</label>
             </div>
         </div>
-
-        <a class="link" href="../index.html">Voltar</a>
+        <button id="generate-signal" >Gerar Sinal Periódico</button>
+        <a href="../index.html">Voltar</a>
     </main>
 
     <footer></footer>
     <script type="module" src="./scripts.js"></script>
 </body>
-
 </html>
