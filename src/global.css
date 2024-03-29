@@ -144,6 +144,10 @@ footer::after {
     display: none;
 }
 
+#view-escalation {
+    display: none;
+}
+
 #view-signal-change {
     display: none;
 }

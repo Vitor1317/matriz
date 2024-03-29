@@ -6,6 +6,7 @@ const buttonGenerate = document.getElementById('generate');
 const linkViewImage = document.getElementById('view-image');
 const linkViewMatriz = document.getElementById('view-matriz');
 const linkViewSignalChange = document.getElementById('view-signal-change');
+const linkEscalation = document.getElementById('view-escalation');
 
 const matriz = [];
 let image;
@@ -70,5 +71,6 @@ buttonGenerate.onclick = () => {
   linkViewImage.style.display = 'block';
   linkViewMatriz.style.display = 'block';
   linkViewSignalChange.style.display = 'block';
+  linkEscalation.style.display = 'block';
   buttonGenerate.style.display = 'none';
 };
