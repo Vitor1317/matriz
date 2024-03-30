@@ -8,6 +8,7 @@ const linkViewMatriz = document.getElementById('view-matriz');
 const linkViewSignalChange = document.getElementById('view-signal-change');
 const linkViewEscalation = document.getElementById('view-escalation');
 const linkViewSignalPeriodic = document.getElementById('view-signal-periodic');
+const linkViewRotate = document.getElementById('view-rotate');
 
 const matriz = [];
 let image;
@@ -74,5 +75,6 @@ buttonGenerate.onclick = () => {
   linkViewSignalChange.style.display = 'block';
   linkViewEscalation.style.display = 'block';
   linkViewSignalPeriodic.style.display = 'block';
+  linkViewRotate.style.display = 'block';
   buttonGenerate.style.display = 'none';
 };
