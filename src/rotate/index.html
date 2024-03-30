@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Rotate</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gerador de Matriz</h1>
+        <p>com HTML5 Canvas e JS</p>
+    </header>
+
+    <main>
+        <div class="image-cotainer">
+            <img class="image" id="signal" alt="" style="max-width: 100%; max-height: 100%; top: 0px; margin: 0;">
+        </div>
+
+        <div id="counter" style="font-size: 1.5em; text-align: center; margin: 50px;">
+            Rotação atual:
+            <output id="actual-degree">0</output>º
+        </div>
+        <div id="rotate-container">
+            <div id="rotate-container-range">
+                <input id="pi_input" type="range" min="0" max="360" value="0" step="10" />
+                <output id="value">0</output>º
+            </div>
+            <div id="rotate-container-buttons">
+                <img class="rotate-image" id="rotate-to-left" src="./img/rotate-to-left.png" alt=""
+                    title="Girar para a esquerda">
+                <img class="rotate-image" id="rotate-to-right" src="./img/rotate-to-right.png" alt=""
+                    title="Girar para a direita">
+            </div>
+        </div>
+
+        <a href="../index.html">Voltar</a>
+    </main>
+
+    <footer></footer>
+    <script type="module" src="./scripts.js"></script>
+</body>
+
+</html>
