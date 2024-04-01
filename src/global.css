@@ -158,7 +158,11 @@ footer::after {
     display: none;
 }
 
-#view-rotate{
+#view-rotate {
+    display: none;
+}
+
+#view-crop {
     display: none;
 }
 

@@ -1,0 +1,9 @@
+#selection-tool {
+    position: fixed;
+    display: none;
+    border: 2px dashed var(--green);
+}
+
+#crop-image, #download {
+    display: none;
+}

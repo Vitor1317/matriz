@@ -9,6 +9,7 @@ const linkViewSignalChange = document.getElementById('view-signal-change');
 const linkViewEscalation = document.getElementById('view-escalation');
 const linkViewSignalPeriodic = document.getElementById('view-signal-periodic');
 const linkViewRotate = document.getElementById('view-rotate');
+const linkViewCrop = document.getElementById('view-crop');
 
 const matriz = [];
 let image;
@@ -54,6 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
     reader.onload = (event) => {
       image = new Image();
       image.src = event.target.result;
+      localStorage.setItem('image-name', file.name);
       localStorage.setItem('image', image.src);
       image.onload = loadImage;
     };
@@ -76,5 +78,6 @@ buttonGenerate.onclick = () => {
   linkViewEscalation.style.display = 'block';
   linkViewSignalPeriodic.style.display = 'block';
   linkViewRotate.style.display = 'block';
+  linkViewCrop.style.display = 'block';
   buttonGenerate.style.display = 'none';
 };
