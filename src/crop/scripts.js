@@ -111,10 +111,11 @@ function cropImage() {
 
   ctx.putImageData(croppedImage, 0, 0);
 
-  selection.style.display = 'none';
+  cropButton.style.display = 'none';
 
   photoPreview.src = canvas.toDataURL();
 
+  selection.style.display = 'none';
   download.style.display = 'block';
 }
 
