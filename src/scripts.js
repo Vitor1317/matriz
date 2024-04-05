@@ -1,3 +1,4 @@
+// Elementos visuais que serão adicionados eventos ou manipulação de seus dados
 const buttonSelect = document.getElementById('select-image');
 const upload = document.getElementById('upload');
 const canvas = document.getElementById('canvas');
@@ -14,10 +15,12 @@ const linkViewCrop = document.getElementById('view-crop');
 const matriz = [];
 let image;
 
+//Adiciona evento ao butão de escolher imagem
 buttonSelect.onclick = () => {
   upload.click();
 };
 
+// Calcula fator de proporção da imagem
 function imageFactor(length) {
   let factor = 1;
 
@@ -33,6 +36,7 @@ function imageFactor(length) {
   return factor;
 }
 
+// Desenha Imagem em tela e salva fator de proporção no localStorage
 function loadImage() {
   const { width, height } = image;
 
@@ -46,6 +50,7 @@ function loadImage() {
   buttonGenerate.style.display = 'block';
 }
 
+// Assim que a página carrega é adicionado evento para carregar a imagem quando for enviada pelo usuário
 window.addEventListener('DOMContentLoaded', () => {
   upload.addEventListener('change', () => {
     let file = upload.files.item(0);
@@ -62,7 +67,9 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Ações de realizadas ao clicar no butão de gerar matriz
 buttonGenerate.onclick = () => {
+  //Cria matriz
   for (let y = 0; y < canvas.height; y++) {
     matriz.push([]);
     for (let x = 0; x < canvas.width; x++) {
@@ -70,8 +77,9 @@ buttonGenerate.onclick = () => {
       matriz[y][x] = `rgba(${red},${green},${blue},${alpha})`;
     }
   }
-
+  // salva matriz no localStorage
   localStorage.setItem('matriz', JSON.stringify(matriz));
+  // Adiciona os botões de operações de sinal na tela
   linkViewImage.style.display = 'block';
   linkViewMatriz.style.display = 'block';
   linkViewSignalChange.style.display = 'block';

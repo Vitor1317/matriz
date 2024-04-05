@@ -1,5 +1,7 @@
+// importa da pasta utils funções de conversão de cores
 import { hexToRgb, hexToRgba } from '../../utils/conversion.js';
 
+// Elementos visuais que serão adicionados eventos ou manipulação de seus dados
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const linkGoBack = document.getElementById('go-back');
@@ -13,8 +15,10 @@ const title = document.querySelectorAll('.title');
 const input_color = document.getElementById('input-color');
 const span_container = document.getElementById('span-container');
 
+//Variável que conta as cores de mesma tonalidade encontradas
 let counter = 0;
 
+//Carrega Matriz do localStorage
 const matriz = JSON.parse(localStorage.getItem('matriz'));
 
 const width = (canvas.width = matriz[0].length);
@@ -26,6 +30,7 @@ container_inputs.addEventListener('change', () => {
   preview_color.style.backgroundColor = `rgb(${input_red.value},${input_green.value},${input_blue.value})`;
 });
 
+// Muda as cores da imagem
 function reDraw(color, swap) {
   function getRGBA(codeColor) {
     const rbga = codeColor.replace(
@@ -34,7 +39,7 @@ function reDraw(color, swap) {
     );
     return rbga.split(',');
   }
-
+  //verifica para todas as cores de mesma tonalidade
   function isIntervalColor(colorChoose, colorMatriz) {
     colorMatriz = Number(colorMatriz);
 
@@ -69,6 +74,7 @@ function reDraw(color, swap) {
   }
 }
 
+// Responsável por pegar a cor escolhida e disparar o evento de mudar as cores da imagem
 async function choosedColor() {
   const eyeDropper = new EyeDropper();
 
@@ -96,8 +102,10 @@ async function choosedColor() {
   counter = 0;
 }
 
+// addiciona evento de click ao botão de escolha de cor
 buttonChooseColor.addEventListener('click', choosedColor);
 
+// Desenha a Imagem em tela quando a página é carregada
 function draw() {
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
@@ -107,6 +115,7 @@ function draw() {
   }
 }
 
+// evento de carregamento de página
 window.addEventListener('DOMContentLoaded', () => {
   draw();
 

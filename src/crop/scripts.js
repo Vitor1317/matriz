@@ -1,4 +1,7 @@
+// Carrega Imagem do localStorage
 const imageSrc = localStorage.getItem('image');
+// Elementos visuais que serão adicionados eventos ou manipulação de seus dados
+
 const photoPreview = document.getElementById('photo-preview');
 const selection = document.getElementById('selection-tool');
 const cropButton = document.getElementById('crop-image');
@@ -6,8 +9,10 @@ const download = document.getElementById('download');
 const image = new Image();
 let photoName = localStorage.getItem('image-name');
 
+//Carrega a imagem
 image.src = imageSrc;
 
+//variáveis das posições da imagem
 let startX,
   startY,
   relativeX,
@@ -19,6 +24,7 @@ let startX,
 
 let startSelection = false;
 
+//Eventos do Corte da Imagem
 const events = {
   mouseover() {
     this.style.cursor = 'crosshair';
@@ -63,6 +69,7 @@ Object.keys(events).forEach((eventName) => {
 let canvas = document.createElement('canvas');
 let ctx = canvas.getContext('2d');
 
+//função que carrega a imagem
 function loadImage() {
   const { width, height } = image;
   canvas.width = width;
@@ -75,8 +82,10 @@ function loadImage() {
   photoPreview.src = canvas.toDataURL();
 }
 
+//Adiciona evento de carregamento a imagem
 image.onload = loadImage;
 
+//função que corta a imagem e calcula a proporção da nova imagem
 function cropImage() {
   const { width: imgW, height: imgH } = image;
   const { width: previewW, height: previewH } = photoPreview;
@@ -119,8 +128,10 @@ function cropImage() {
   download.style.display = 'block';
 }
 
+//Adiciona evento de click ao butão de cortar
 cropButton.onclick = cropImage;
 
+//Função para fazer download da Imagem cortada
 function downloadImage() {
   const a = document.createElement('a');
   a.download = photoName + '-cropped.png';
