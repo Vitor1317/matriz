@@ -11,8 +11,13 @@ const linkViewEscalation = document.getElementById('view-escalation');
 const linkViewSignalPeriodic = document.getElementById('view-signal-periodic');
 const linkViewRotate = document.getElementById('view-rotate');
 const linkViewCrop = document.getElementById('view-crop');
+const linkViewFilter = document.getElementById('view-filter');
+const linkViewHistogram = document.getElementById('view-histogram');
 
 const matriz = [];
+const redSignal = {};
+const greenSignal = {};
+const blueSignal = {};
 let image;
 
 //Adiciona evento ao butão de escolher imagem
@@ -74,11 +79,24 @@ buttonGenerate.onclick = () => {
     matriz.push([]);
     for (let x = 0; x < canvas.width; x++) {
       const [red, green, blue, alpha] = ctx.getImageData(x, y, 1, 1).data;
+      redSignal[red] !== undefined ? redSignal[red]++ : (redSignal[red] = 1);
+
+      blueSignal[blue] !== undefined
+        ? blueSignal[blue]++
+        : (blueSignal[blue] = 1);
+
+      greenSignal[green] !== undefined
+        ? greenSignal[green]++
+        : (greenSignal[green] = 1);
+
       matriz[y][x] = `rgba(${red},${green},${blue},${alpha})`;
     }
   }
   // salva matriz no localStorage
   localStorage.setItem('matriz', JSON.stringify(matriz));
+  localStorage.setItem('redSignal', JSON.stringify(redSignal));
+  localStorage.setItem('blueSignal', JSON.stringify(blueSignal));
+  localStorage.setItem('greenSignal', JSON.stringify(greenSignal));
   // Adiciona os botões de operações de sinal na tela
   linkViewImage.style.display = 'block';
   linkViewMatriz.style.display = 'block';
@@ -87,5 +105,7 @@ buttonGenerate.onclick = () => {
   linkViewSignalPeriodic.style.display = 'block';
   linkViewRotate.style.display = 'block';
   linkViewCrop.style.display = 'block';
+  linkViewFilter.style.display = 'block';
+  linkViewHistogram.style.display = 'block';
   buttonGenerate.style.display = 'none';
 };

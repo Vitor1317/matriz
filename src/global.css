@@ -5,7 +5,7 @@
     --orange: #fd951f;
     --brown-opaque: rgba(250, 152, 5, 0.139);
     --white: #f0f0f9;
-    --green: hsl(98 100% 62%);
+    --green: hsl(98, 98%, 62%);
     --blue: hsl(204 100% 59%);
     --purple: #8257e6;
 }
@@ -138,35 +138,16 @@ footer::after {
     display: none;
 }
 
-#view-image {
-    display: none;
-}
-
-#view-matriz {
-    display: none;
-}
-
-#view-escalation {
-    display: none;
-}
-
-#view-signal-change {
-    display: none;
-}
-
-#view-signal-periodic {
-    display: none;
-}
-
-#view-rotate {
-    display: none;
-}
-
-#view-crop {
-    display: none;
-}
-
-#view {
+#view, 
+#view-filter, 
+#view-crop, 
+#view-rotate, 
+#view-signal-periodic, 
+#view-signal-change, 
+#view-escalation, 
+#view-matriz,
+#view-image,
+#view-histogram {
     display: none;
 }
 

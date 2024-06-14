@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Histogram</title>
+</head>
+<body>
+    <header>
+        <h1>Operador de Sinais</h1>
+        <p>com HTML5 Canvas e JS</p>
+    </header>
+
+    <main>
+       <img id="image" alt="">
+
+        <button id="verify-button" type="button">Verificar Cores</button>
+
+        <div id="container-inputs">
+            <div class="input-box">
+                <label for="red">R</label>
+                <input disabled min="0" max="255"  type="number" name="" id="red">
+            </div>
+            <div class="input-box">
+                <label for="green">G</label>
+                <input disabled min="0" max="255" type="number" name="" id="green">
+            </div>
+            <div class="input-box">
+                <label for="blue">B</label>
+                <input disabled min="0" max="255" type="number" name="" id="blue">
+            </div>
+            <div id="preview-color"></div>
+        </div>
+
+        <div id="chart"></div>
+        <div id="chartRed"></div>
+        <div id="chartGreen"></div>
+        <div id="chartBlue"></div>
+
+        <a href="../index.html">Voltar</a>
+    </main>
+
+    <footer></footer>
+    <script type="module" src="./scripts.js"></script>
+</body>
+</html>
